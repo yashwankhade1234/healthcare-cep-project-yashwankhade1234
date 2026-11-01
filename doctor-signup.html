@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration | HealthCare+</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #eafafa, #f7ffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 40% 60%;
+            box-shadow: 0 20px 60px rgba(0, 80, 90, 0.15);
+        }
+
+        /* LEFT SIDE */
+
+        .left-section {
+            background: linear-gradient(145deg, #0e7f82, #19a7a8);
+            color: white;
+            padding: 45px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 45px;
+        }
+
+        .logo span {
+            color: #d8ffff;
+        }
+
+        .doctor-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .left-section h1 {
+            font-size: 36px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .left-section p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #e4ffff;
+        }
+
+        .benefits {
+            margin-top: 30px;
+        }
+
+        .benefit {
+            margin-bottom: 14px;
+            font-size: 14px;
+        }
+
+        /* RIGHT SIDE */
+
+        .right-section {
+            padding: 40px;
+        }
+
+        .form-header {
+            margin-bottom: 25px;
+        }
+
+        .form-header h2 {
+            color: #123b4a;
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        .form-header p {
+            color: #7a8b90;
+            font-size: 13px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #34515a;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px 13px;
+            border: 1px solid #d8e5e7;
+            border-radius: 9px;
+            outline: none;
+            font-size: 13px;
+            background: #fff;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #19a7a8;
+            box-shadow: 0 0 0 3px rgba(25,167,168,0.08);
+        }
+
+        .mobile-input {
+            display: flex;
+            gap: 7px;
+        }
+
+        .country-code {
+            width: 65px;
+            background: #f3fbfb;
+            color: #45636a;
+        }
+
+        .mobile-input input {
+            flex: 1;
+        }
+
+        .password-box {
+            position: relative;
+        }
+
+        .password-box input {
+            padding-right: 45px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 17px;
+            border: 0;
+            padding: 4px;
+            background: transparent;
+        }
+
+        .form-feedback {
+            margin: 12px 0 0;
+            color: #075f63;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .form-feedback:empty {
+            display: none;
+        }
+
+        .form-feedback.error {
+            color: #b42332;
+        }
+
+        .language-picker {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 14px;
+            color: #3d5967;
+            font-size: 12px;
+        }
+
+        .language-picker select {
+            padding: 7px 9px;
+            border: 1px solid #cfe0e2;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #173b4d;
+        }
+
+        .language-status {
+            flex-basis: 100%;
+            text-align: right;
+            color: #075f63;
+            font-size: 11px;
+        }
+
+        .file-box {
+            border: 1px dashed #b8d8da;
+            padding: 14px;
+            border-radius: 10px;
+            background: #f8fdfd;
+        }
+
+        .file-box input {
+            border: none;
+            padding: 0;
+            background: transparent;
+        }
+
+        .terms {
+            margin-top: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 11px;
+            color: #687b80;
+        }
+
+        .terms input {
+            width: auto;
+            margin-top: 2px;
+        }
+
+        .register-btn,
+        .otp-btn {
+            width: 100%;
+            border: none;
+            padding: 13px;
+            margin-top: 20px;
+            border-radius: 10px;
+            background: #19a7a8;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .register-btn:hover,
+        .otp-btn:hover {
+            background: #117f81;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(25,167,168,.20);
+        }
+
+        .otp-section {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 12px;
+            background: #f0fbfb;
+            border: 1px solid #d7eeee;
+        }
+
+        .otp-section h3 {
+            font-size: 15px;
+            color: #123b4a;
+            margin-bottom: 6px;
+        }
+
+        .otp-section p {
+            font-size: 11px;
+            color: #718287;
+            margin-bottom: 12px;
+        }
+
+        .otp-input {
+            text-align: center;
+            letter-spacing: 7px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .bottom-links {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 12px;
+            color: #7a8b90;
+        }
+
+        .bottom-links a {
+            color: #19a7a8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .home-link {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            color: #52676d;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .home-link:hover,
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            margin-top: 12px;
+            font-size: 10px;
+            color: #8a999d;
+            text-align: center;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .left-section {
+                padding: 30px;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 25px;
+            }
+
+            .benefits {
+                display: none;
+            }
+
+            .right-section {
+                padding: 30px 22px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            body {
+                padding: 15px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            .left-section h1 {
+                font-size: 29px;
+            }
+
+            .doctor-icon {
+                font-size: 55px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+
+    <div class="left-section">
+
+        <div class="logo">
+            ✚ HealthCare<span>+</span>
+        </div>
+
+        <div class="doctor-icon">
+            🩺
+        </div>
+
+        <h1>
+            Join HealthCare+ as a Doctor
+        </h1>
+
+        <p>
+            Register as a healthcare professional and help people
+            access reliable healthcare awareness and basic medical services.
+        </p>
+
+        <div class="benefits">
+
+            <div class="benefit">
+                ✓ Create your professional profile
+            </div>
+
+            <div class="benefit">
+                ✓ Manage patient appointments
+            </div>
+
+            <div class="benefit">
+                ✓ Participate in medical camps
+            </div>
+
+            <div class="benefit">
+                ✓ Provide verified health guidance
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+
+    <div class="right-section">
+
+        <div class="language-picker">
+            <label for="languageSelect">Language</label>
+            <select id="languageSelect" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+                <option value="hi">हिंदी</option>
+            </select>
+            <span class="language-status" id="languageStatus" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="form-header">
+
+            <h2>Doctor Registration</h2>
+
+            <p>
+                Enter your professional details to create your account.
+            </p>
+
+        </div>
+
+
+        <form id="doctorForm">
+
+            <div class="form-grid">
+
+                <!-- Doctor Name -->
+
+                <div class="form-group full">
+
+                        <label for="doctorName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="doctorName"
+                        placeholder="Enter full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Mobile -->
+
+                <div class="form-group full">
+
+                    <label for="doctorMobile">Mobile Number</label>
+
+                    <div class="mobile-input">
+
+                        <input
+                            class="country-code"
+                            value="+91"
+                            readonly
+                        >
+
+                        <input
+                            type="tel"
+                            id="doctorMobile"
+                            placeholder="10-digit mobile number"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Degree -->
+
+                <div class="form-group">
+
+                    <label for="degree">Degree / Qualification</label>
+
+                    <select id="degree" required>
+
+                        <option value="">
+                            Select Degree
+                        </option>
+
+                        <option>MBBS</option>
+                        <option>MD</option>
+                        <option>MS</option>
+                        <option>BDS</option>
+                        <option>BHMS</option>
+                        <option>BAMS</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Specialization -->
+
+                <div class="form-group">
+
+                    <label for="specialization">Specialization</label>
+
+                    <select id="specialization" required>
+
+                        <option value="">
+                            Select Specialization
+                        </option>
+
+                        <option>General Physician</option>
+                        <option>Cardiologist</option>
+                        <option>Dermatologist</option>
+                        <option>Pediatrician</option>
+                        <option>Gynecologist</option>
+                        <option>Dentist</option>
+                        <option>Psychiatrist</option>
+                        <option>Orthopedic</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Registration Number -->
+
+                <div class="form-group full">
+
+                    <label for="registrationNumber">Medical Registration Number</label>
+
+                    <input
+                        type="text"
+                        id="registrationNumber"
+                        placeholder="Enter medical registration number"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Certificate -->
+
+                <div class="form-group full">
+
+                    <label for="certificate">Medical Certificate or Degree Certificate</label>
+
+                    <div class="file-box">
+
+                        <input
+                            type="file"
+                            id="certificate"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showConfirmPassword"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Terms -->
+
+            <label class="terms">
+
+                <input
+                    type="checkbox"
+                    id="terms"
+                    required
+                >
+
+                <span>
+                    I confirm that the information provided is correct
+                    and I agree to the HealthCare+ terms and conditions.
+                </span>
+
+            </label>
+
+
+            <button
+                type="submit"
+                class="register-btn"
+            >
+                Continue with Mobile OTP
+            </button>
+
+        </form>
+
+        <p class="form-feedback" id="doctorStatus" role="status" aria-live="polite"></p>
+
+
+        <!-- OTP -->
+
+        <div
+            class="otp-section"
+            id="otpSection"
+        >
+
+            <h3>📱 Verify Mobile Number</h3>
+
+            <p>
+                This local demo does not send SMS. Enter demo code <strong>123456</strong> to continue.
+            </p>
+
+            <input
+                type="text"
+                id="otp"
+                class="otp-input"
+                maxlength="6"
+                placeholder="------"
+            >
+
+            <button
+                type="button"
+                class="otp-btn"
+                id="verifyOtp"
+            >
+                Verify & Create Account
+            </button>
+
+        </div>
+
+
+        <div class="bottom-links">
+
+            Already have an account?
+            <a href="login.html">
+                Login
+            </a>
+
+        </div>
+
+        <a
+            href="index.html"
+            class="home-link"
+        >
+            ← Back to Home
+        </a>
+
+        <div class="note">
+            Demo only: this page does not send SMS or upload or save your details or documents.
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    function togglePassword(id, button) {
+
+        const input = document.getElementById(id);
+
+        if (input.type === "password") {
+
+            input.type = "text";
+            button.textContent = "🙈";
+            button.setAttribute("aria-label", "Hide password");
+            button.setAttribute("aria-pressed", "true");
+
+        } else {
+
+            input.type = "password";
+            button.textContent = "👁️";
+            button.setAttribute("aria-label", "Show password");
+            button.setAttribute("aria-pressed", "false");
+
+        }
+
+    }
+
+    document
+        .getElementById("showPassword")
+        .addEventListener("click", function () {
+            togglePassword("password", this);
+        });
+
+    document
+        .getElementById("showConfirmPassword")
+        .addEventListener("click", function () {
+            togglePassword("confirmPassword", this);
+        });
+
+
+    const doctorForm =
+        document.getElementById("doctorForm");
+
+    const otpSection =
+        document.getElementById("otpSection");
+
+    const doctorStatus =
+        document.getElementById("doctorStatus");
+
+    function showDoctorStatus(message, isError) {
+        doctorStatus.textContent = message;
+        doctorStatus.classList.toggle("error", Boolean(isError));
+    }
+
+    doctorForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const mobile =
+            document.getElementById("doctorMobile").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+        const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+        const certificate =
+            document.getElementById("certificate").files[0];
+
+
+        /* Mobile validation */
+
+        if (!/^[0-9]{10}$/.test(mobile)) {
+
+            showDoctorStatus("Enter a valid 10-digit mobile number.", true);
+
+            return;
+
+        }
+
+
+        /* Password validation */
+
+        if (password.length < 6) {
+
+            showDoctorStatus("Password must contain at least 6 characters.", true);
+
+            return;
+
+        }
+
+
+        /* Confirm password */
+
+        if (password !== confirmPassword) {
+
+            showDoctorStatus("The passwords do not match. Please check both fields.", true);
+
+            return;
+
+        }
+
+
+        /* Certificate */
+
+        if (!certificate) {
+
+            showDoctorStatus("Upload your medical certificate or degree certificate to continue.", true);
+
+            return;
+
+        }
+
+
+        /* Demo OTP */
+
+        otpSection.style.display = "block";
+        showDoctorStatus("Demo verification is ready. Enter 123456 below; no SMS was sent.", false);
+
+        otpSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        document.getElementById("otp").focus();
+
+    });
+
+
+    document
+        .getElementById("verifyOtp")
+        .addEventListener("click", function() {
+
+            const otp =
+                document.getElementById("otp").value.trim();
+
+            if (!/^[0-9]{6}$/.test(otp)) {
+
+                showDoctorStatus("Enter the 6-digit demo code 123456.", true);
+
+                return;
+
+            }
+
+            if (otp !== "123456") {
+                showDoctorStatus("That code is not correct. Enter the demo code 123456.", true);
+                return;
+            }
+
+            showDoctorStatus(
+                "Demo verification complete. No SMS was sent and no account was saved because registration is not connected to an account service.",
+                false
+            );
+
+        });
+
+</script>
+<script src="./js/i18n.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | HealthCare+</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #eafafa, #f8ffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 950px;
+            min-height: 570px;
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            box-shadow: 0 20px 60px rgba(0, 80, 90, 0.15);
+        }
+
+        /* LEFT */
+
+        .left-side {
+            background: linear-gradient(145deg, #0d7d80, #19a7a8);
+            color: white;
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 55px;
+        }
+
+        .logo span {
+            color: #d8ffff;
+        }
+
+        .health-icon {
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .left-side h1 {
+            font-size: 38px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .left-side p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #e6ffff;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            font-size: 13px;
+            margin-bottom: 13px;
+        }
+
+        /* RIGHT */
+
+        .right-side {
+            padding: 50px 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .heading h2 {
+            font-size: 30px;
+            color: #123b4a;
+            margin-bottom: 7px;
+        }
+
+        .heading p {
+            color: #7a8b90;
+            font-size: 13px;
+            margin-bottom: 28px;
+        }
+
+        /* ROLE */
+
+        .role-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #45636a;
+            margin-bottom: 10px;
+        }
+
+        .role-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .role-btn {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #d6e5e7;
+            background: white;
+            color: #46636a;
+            cursor: pointer;
+            font-weight: bold;
+            transition: .3s ease;
+        }
+
+        .role-btn:hover {
+            border-color: #19a7a8;
+        }
+
+        .role-btn.active {
+            background: #e9f8f7;
+            border-color: #19a7a8;
+            color: #128384;
+        }
+
+        /* FORM */
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            color: #34515a;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d8e5e7;
+            border-radius: 9px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        input:focus {
+            border-color: #19a7a8;
+            box-shadow: 0 0 0 3px rgba(25,167,168,.08);
+        }
+
+        .mobile-input {
+            display: flex;
+            gap: 7px;
+        }
+
+        .country-code {
+            width: 65px;
+            background: #f3fbfb;
+            color: #45636a;
+        }
+
+        .mobile-input input:last-child {
+            flex: 1;
+        }
+
+        .password-box {
+            position: relative;
+        }
+
+        .password-box input {
+            padding-right: 45px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 17px;
+            border: 0;
+            padding: 4px;
+            background: transparent;
+        }
+
+        /* OPTIONS */
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0 20px;
+            font-size: 11px;
+        }
+
+        .remember {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            color: #6f8085;
+        }
+
+        .remember input {
+            width: auto;
+        }
+
+        .forgot {
+            text-decoration: none;
+            font-weight: bold;
+            border: 0;
+            padding: 0;
+            background: transparent;
+            cursor: pointer;
+            font: inherit;
+            color: #19a7a8;
+        }
+
+        /* LOGIN */
+
+        .login-submit {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #19a7a8;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            transition: .3s ease;
+        }
+
+        .login-submit:hover {
+            background: #117f81;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(25,167,168,.2);
+        }
+
+        /* SIGNUP */
+
+        .signup-text {
+            text-align: center;
+            margin-top: 22px;
+            color: #7a8b90;
+            font-size: 12px;
+        }
+
+        .signup-text a {
+            color: #19a7a8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .signup-text a:hover {
+            text-decoration: underline;
+        }
+
+        .home-link {
+            display: block;
+            text-align: center;
+            margin-top: 13px;
+            color: #52676d;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+
+        .demo-note {
+            text-align: center;
+            margin-top: 18px;
+            color: #9aa7aa;
+            font-size: 10px;
+        }
+
+        .form-status {
+            margin: 12px 0 0;
+            color: #075f63;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .form-status:empty {
+            display: none;
+        }
+
+        .form-status.error {
+            color: #b42332;
+        }
+
+        .language-picker {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 14px;
+            color: #3d5967;
+            font-size: 12px;
+        }
+
+        .language-picker select {
+            padding: 7px 9px;
+            border: 1px solid #cfe0e2;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #173b4d;
+        }
+
+        .language-status {
+            flex-basis: 100%;
+            text-align: right;
+            color: #075f63;
+            font-size: 11px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .login-container {
+                grid-template-columns: 1fr;
+            }
+
+            .left-side {
+                padding: 30px;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 25px;
+            }
+
+            .features {
+                display: none;
+            }
+
+            .health-icon {
+                font-size: 50px;
+            }
+
+            .left-side h1 {
+                font-size: 30px;
+            }
+
+            .right-side {
+                padding: 35px 25px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .right-side {
+                padding: 30px 20px;
+            }
+
+            .heading h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="left-side">
+
+        <div class="logo">
+            ✚ HealthCare<span>+</span>
+        </div>
+
+        <div class="health-icon">
+            🏥
+        </div>
+
+        <h1>
+            Welcome Back!
+        </h1>
+
+        <p>
+            Access healthcare awareness, medical services,
+            appointments and helpful health information
+            through HealthCare+.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                ✓ Health & Hygiene Awareness
+            </div>
+
+            <div class="feature">
+                ✓ Medical Camp Information
+            </div>
+
+            <div class="feature">
+                ✓ Doctor & Patient Services
+            </div>
+
+            <div class="feature">
+                ✓ AI Health Awareness Assistant
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="right-side">
+
+        <div class="language-picker">
+            <label for="languageSelect">Language</label>
+            <select id="languageSelect" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+                <option value="hi">हिंदी</option>
+            </select>
+            <span class="language-status" id="languageStatus" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="heading">
+
+            <h2>Sign In</h2>
+
+            <p>
+                Sign in to your HealthCare+ account.
+            </p>
+
+        </div>
+
+
+        <!-- ROLE -->
+
+        <div class="role-title">
+            Select Account Type
+        </div>
+
+        <div class="role-buttons">
+
+            <button
+                type="button"
+                class="role-btn active"
+                id="patientRole"
+                aria-pressed="true"
+            >
+                👤 Patient
+            </button>
+
+            <button
+                type="button"
+                class="role-btn"
+                id="doctorRole"
+                aria-pressed="false"
+            >
+                🩺 Doctor
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label>
+                    Mobile Number
+                </label>
+
+                <div class="mobile-input">
+
+                    <input
+                        type="text"
+                        class="country-code"
+                        value="+91"
+                        readonly
+                    >
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Enter 10-digit mobile number"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="showPassword"
+                        aria-label="Show password"
+                        aria-pressed="false"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="options">
+                <button
+                    type="button"
+                    class="forgot"
+                    id="forgotPasswordBtn"
+                >
+                    Forgot Password?
+                </button>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-submit"
+            >
+                Login
+            </button>
+
+            <p class="form-status" id="loginStatus" role="status" aria-live="polite"></p>
+
+        </form>
+
+
+        <!-- SIGNUP -->
+
+        <div class="signup-text">
+
+            Don't have an account?
+
+            <a
+                href="patient-signup.html"
+                id="signupLink"
+            >
+                Create Account
+            </a>
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="home-link"
+        >
+            ← Back to Home
+        </a>
+
+
+        <div class="demo-note">
+            Demo only: sign-in is not connected to an account service. Your details are not checked or saved.
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* ROLE */
+
+    const patientRole =
+        document.getElementById("patientRole");
+
+    const doctorRole =
+        document.getElementById("doctorRole");
+
+    const signupLink =
+        document.getElementById("signupLink");
+
+    let selectedRole = "patient";
+
+
+    patientRole.addEventListener("click", function () {
+
+        selectedRole = "patient";
+
+        patientRole.classList.add("active");
+        doctorRole.classList.remove("active");
+        patientRole.setAttribute("aria-pressed", "true");
+        doctorRole.setAttribute("aria-pressed", "false");
+
+        signupLink.href = "patient-signup.html";
+
+    });
+
+
+    doctorRole.addEventListener("click", function () {
+
+        selectedRole = "doctor";
+
+        doctorRole.classList.add("active");
+        patientRole.classList.remove("active");
+        doctorRole.setAttribute("aria-pressed", "true");
+        patientRole.setAttribute("aria-pressed", "false");
+
+        signupLink.href = "doctor-signup.html";
+
+    });
+
+
+    /* SHOW PASSWORD */
+
+    const showPassword =
+        document.getElementById("showPassword");
+
+    const password =
+        document.getElementById("password");
+
+
+    showPassword.addEventListener("click", function () {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+            showPassword.textContent = "🙈";
+            showPassword.setAttribute("aria-label", "Hide password");
+            showPassword.setAttribute("aria-pressed", "true");
+
+        } else {
+
+            password.type = "password";
+            showPassword.textContent = "👁️";
+            showPassword.setAttribute("aria-label", "Show password");
+            showPassword.setAttribute("aria-pressed", "false");
+
+        }
+
+    });
+
+
+    /* LOGIN */
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+    const loginStatus =
+        document.getElementById("loginStatus");
+
+    function showLoginStatus(message, isError) {
+        loginStatus.textContent = message;
+        loginStatus.classList.toggle("error", Boolean(isError));
+    }
+
+
+    loginForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const mobile =
+            document.getElementById("mobile").value.trim();
+
+        const passwordValue =
+            document.getElementById("password").value;
+
+
+        if (!/^[0-9]{10}$/.test(mobile)) {
+
+            showLoginStatus("Enter a valid 10-digit mobile number.", true);
+
+            return;
+
+        }
+
+
+        if (passwordValue.length < 6) {
+
+            showLoginStatus("Password must contain at least 6 characters.", true);
+
+            return;
+
+        }
+
+
+        showLoginStatus(
+            "Demo sign-in submitted for " +
+            (selectedRole === "patient" ? "patient" : "doctor") +
+            ". No account was authenticated; connect an account service to enable real sign-in.",
+            false
+        );
+
+    });
+
+
+    /* FORGOT PASSWORD */
+
+    function forgotPassword(event) {
+        showLoginStatus(
+            "Password reset is unavailable in this demo because account verification is not connected.",
+            false
+        );
+
+    }
+
+    document
+        .getElementById("forgotPasswordBtn")
+        .addEventListener("click", forgotPassword);
+
+</script>
+<script src="./js/i18n.js"></script>
+
+</body>
+</html>

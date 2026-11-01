@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f9f8">
+    <title>Learning Centre | HealthCare+</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="learning-page">
+    <header class="navbar">
+        <a class="logo" href="index.html" aria-label="HealthCare+ home"><span class="logo-icon" aria-hidden="true">✚</span><span>HealthCare<span class="logo-plus">+</span></span></a>
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="health-awareness.html">Health Awareness</a>
+            <a href="hygiene.html">Hygiene</a>
+            <a href="learning-centre.html" class="active" aria-current="page">Learning Centre</a>
+            <a href="women-child-health.html">Women &amp; Child Health</a>
+            <a href="medical-camps.html">Medical Camps</a>
+            <a href="emergency.html">Emergency Support</a>
+            <a href="index.html#ai-assistant">AI Assistant</a>
+            <a href="about.html">About</a>
+            <div class="language-picker"><label for="languageSelect">Language</label><select id="languageSelect" aria-label="Select language"><option value="en">English</option><option value="mr">मराठी</option><option value="hi">हिंदी</option></select><span class="language-status" id="languageStatus" role="status" aria-live="polite"></span></div>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false"><span class="menu-line"></span><span class="menu-line"></span><span class="menu-line"></span></button>
+    </header>
+
+    <main>
+        <section class="learning-hero">
+            <div class="learning-hero-copy">
+                <p class="learning-eyebrow"><span aria-hidden="true">✦</span> HEALTHCARE+ LEARNING CENTRE</p>
+                <h1>Learn one small step.<br><span>Build a healthier habit.</span></h1>
+                <p>Short, practical lessons for everyday health, hygiene, and family care. Watch a trusted video, follow the steps, and save your learning progress on this device.</p>
+                <a class="learning-hero-button" href="#learningLessons">Explore the lessons <span aria-hidden="true">↓</span></a>
+            </div>
+            <aside class="learning-hero-card" aria-label="How the lessons work">
+                <div class="learning-orbit" aria-hidden="true"><span>✚</span><i>●</i><b>+</b></div>
+                <p class="learning-card-kicker">A simple learning path</p>
+                <div class="learning-path-row"><span>01</span><div><strong>Watch</strong><small>Short videos from health organisations</small></div></div>
+                <div class="learning-path-row"><span>02</span><div><strong>Try the steps</strong><small>Clear actions you can follow</small></div></div>
+                <div class="learning-path-row"><span>03</span><div><strong>Mark it learned</strong><small>Your progress stays on this device</small></div></div>
+            </aside>
+        </section>
+
+        <section class="learning-library" id="learningLessons">
+            <div class="section-heading learning-heading">
+                <p class="section-tag">PICK A TOPIC</p>
+                <h2>Useful health lessons, <span>all in one place.</span></h2>
+                <p>Choose a topic to open its video, simple explanation, and step-by-step guide.</p>
+            </div>
+
+            <div class="learning-progress-card" aria-live="polite">
+                <div class="learning-progress-icon" aria-hidden="true">✓</div>
+                <div class="learning-progress-copy"><strong>Your learning progress</strong><span id="learningProgressText">0 of 14 lessons completed on this device.</span></div>
+                <progress id="learningProgress" max="14" value="0" aria-label="Learning lessons completed">0</progress>
+                <button class="text-button" id="resetLearningProgress" type="button">Reset progress</button>
+            </div>
+
+            <div class="interaction-panel learning-filters" id="learningExplorer">
+                <div><label for="learningSearch">Search lessons</label><input id="learningSearch" type="search" placeholder="Try water, food, sleep..."></div>
+                <div><label for="learningCategory">Filter by topic</label><select id="learningCategory"><option value="all">All lessons</option><option value="everyday">Everyday health</option><option value="hygiene">Hygiene</option><option value="family">Women &amp; child health</option></select></div>
+                <p class="interaction-status" id="learningFilterStatus" role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="learning-grid">
+                <article class="learning-card" id="safe-water" data-learning-category="everyday">
+                    <div class="learning-card-top"><span class="learning-topic-icon">💧</span><span class="learning-topic-label">EVERYDAY HEALTH · 3 MIN</span></div>
+                    <h3>Choose and store safe water</h3><p>Learn how to follow local water-safety guidance and keep drinking water clean at home.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video"><iframe loading="lazy" title="UNICEF India video about safe water and WASH" src="https://www.youtube-nocookie.com/embed/0zouCN6cpO0?rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Video by UNICEF India · English audio</p></div>
+                            <div class="lesson-copy"><div><h4>What to remember</h4><p>Water treatment depends on the source and local advice. Use guidance from your local water authority or health worker; one method does not fit every water problem.</p></div><div><h4>Step by step</h4><ol><li>Check local notices or ask a health worker about your water source.</li><li>Use the treatment method recommended for that source and follow its instructions.</li><li>Keep treated water in a clean, covered container.</li><li>Use a clean utensil to take water out, and keep treated water separate from untreated water.</li></ol></div><a class="lesson-source" href="https://www.who.int/news-room/fact-sheets/detail/drinking-water" target="_blank" rel="noopener">Read the WHO drinking-water information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="safe-water"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="handwashing" data-learning-category="hygiene">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🧼</span><span class="learning-topic-label">HYGIENE · 3 MIN</span></div>
+                    <h3>Wash hands with soap</h3><p>Follow a clear handwashing sequence and learn when clean hands matter most.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video"><iframe loading="lazy" title="WHO demonstration: how to handwash with soap and water" src="https://www.youtube-nocookie.com/embed/3PmVJQUCm4E?rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Video by the World Health Organization · English audio</p></div>
+                            <div class="lesson-copy"><div><h4>When should you wash?</h4><p>Wash before preparing or eating food, after using the toilet, after coughing or sneezing, and whenever hands are visibly dirty.</p></div><div><h4>Step by step</h4><ol><li>Wet hands with clean running water.</li><li>Apply soap and rub palms together.</li><li>Rub the backs of both hands and between fingers.</li><li>Clean fingertips, thumbs, and around nails.</li><li>Rinse well with clean water.</li><li>Dry with a clean towel or let hands air dry.</li></ol></div><a class="lesson-source" href="https://www.who.int/campaigns/world-hand-hygiene-day" target="_blank" rel="noopener">Read WHO hand-hygiene guidance ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="handwashing"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="personal-care" data-learning-category="hygiene">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🚿</span><span class="learning-topic-label">HYGIENE · 3 MIN</span></div>
+                    <h3>Build a personal-hygiene routine</h3><p>Simple daily care for clean clothes, comfortable skin, and a fresh routine.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video-link"><span class="video-play-icon" aria-hidden="true">▶</span><strong>Video lesson</strong><p>Watch a WHO handwashing demonstration as one part of everyday personal care.</p><a href="https://www.youtube.com/watch?v=3PmVJQUCm4E" target="_blank" rel="noopener">Watch the WHO handwashing video ↗</a></div>
+                            <div class="lesson-copy"><div><h4>Comfort and cleanliness</h4><p>Personal-care routines can vary with a person’s needs, available water, climate, and culture. Choose safe, practical habits that work for you.</p></div><div><h4>Step by step</h4><ol><li>Wash hands with soap at important times during the day.</li><li>Change into clean clothes when available, especially after they become wet or dirty.</li><li>Keep personal-care items clean and do not share items that touch the body.</li><li>Ask a health professional about ongoing irritation, pain, or skin concerns.</li></ol></div><a class="lesson-source" href="https://www.unicef.org/wash" target="_blank" rel="noopener">Explore UNICEF hygiene information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="personal-care"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="balanced-meals" data-learning-category="everyday">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🥗</span><span class="learning-topic-label">EVERYDAY HEALTH · 4 MIN</span></div>
+                    <h3>Build a balanced meal</h3><p>Explore practical ways to include variety using foods available in your community.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video"><iframe loading="lazy" title="Indian Ministry of Health video about healthy habits" src="https://www.youtube-nocookie.com/embed/d9-5xmyvtpE?rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Video by India’s Ministry of Health &amp; Family Welfare · Hindi audio</p></div>
+                            <div class="lesson-copy"><div><h4>What to remember</h4><p>A varied diet can include familiar grains, pulses or other protein foods, vegetables, and fruit. Personal needs can differ by age, health, pregnancy, and culture.</p></div><div><h4>Step by step</h4><ol><li>Start with foods your household already knows and can access.</li><li>Add variety across meals when available, including vegetables, fruit, grains, and pulses.</li><li>Use clean water and safe food preparation habits.</li><li>Ask a qualified health professional about special diets or supplements.</li></ol></div><a class="lesson-source" href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank" rel="noopener">Read WHO healthy-diet information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="balanced-meals"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="daily-movement" data-learning-category="everyday">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🚶</span><span class="learning-topic-label">EVERYDAY HEALTH · 3 MIN</span></div>
+                    <h3>Add movement to your day</h3><p>Simple ways to choose comfortable movement and build a routine at your own pace.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video-link"><span class="video-play-icon" aria-hidden="true">▶</span><strong>Video lesson</strong><p>Open a video search for the WHO “Every Move Counts” campaign.</p><a href="https://www.youtube.com/results?search_query=WHO+Every+Move+Counts+physical+activity" target="_blank" rel="noopener">Find the WHO video ↗</a></div>
+                            <div class="lesson-copy"><div><h4>Start where you are</h4><p>Movement can be part of daily life. Choose an activity that feels comfortable and fits your abilities and surroundings.</p></div><div><h4>Step by step</h4><ol><li>Pick a movement you enjoy, such as walking or gentle stretching.</li><li>Choose a comfortable time and place.</li><li>Begin at an easy pace and build a routine gradually.</li><li>Stop if you feel unwell; ask a health professional what is suitable if you have a health condition.</li></ol></div><a class="lesson-source" href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" rel="noopener">Read WHO physical-activity information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="daily-movement"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="healthy-sleep" data-learning-category="everyday">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🌙</span><span class="learning-topic-label">EVERYDAY HEALTH · 3 MIN</span></div>
+                    <h3>Create a calmer sleep routine</h3><p>Small, repeatable habits can make it easier to prepare for rest.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video-link"><span class="video-play-icon" aria-hidden="true">▶</span><strong>Video lesson</strong><p>Look for sleep-health videos from a recognised health organisation.</p><a href="https://www.youtube.com/results?search_query=CDC+healthy+sleep+habits+official" target="_blank" rel="noopener">Find a CDC sleep video ↗</a></div>
+                            <div class="lesson-copy"><div><h4>Make rest part of the routine</h4><p>Sleep needs differ by age and person. These are general routine ideas; ongoing sleep difficulty deserves professional advice.</p></div><div><h4>Step by step</h4><ol><li>Choose a regular time to begin winding down.</li><li>Make your sleeping space as quiet and comfortable as you can.</li><li>Try a calm activity before bed, such as reading or quiet breathing.</li><li>Speak with a health professional if sleep problems continue or affect daily life.</li></ol></div><a class="lesson-source" href="https://www.nhlbi.nih.gov/health/sleep-deprivation" target="_blank" rel="noopener">Read trusted sleep-health information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="healthy-sleep"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="mental-wellbeing" data-learning-category="everyday">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🧠</span><span class="learning-topic-label">EVERYDAY HEALTH · 4 MIN</span></div>
+                    <h3>Care for your mental well-being</h3><p>Notice how you are feeling, stay connected, and know where to seek support.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video-link"><span class="video-play-icon" aria-hidden="true">▶</span><strong>Video lesson</strong><p>Browse mental-health awareness videos published by WHO.</p><a href="https://www.youtube.com/results?search_query=WHO+mental+health+awareness+official+video" target="_blank" rel="noopener">Find a WHO video ↗</a></div>
+                            <div class="lesson-copy"><div><h4>Support matters</h4><p>Everyone can face difficult feelings. Support from a trusted person or trained professional can help; seeking help is a useful step.</p></div><div><h4>Step by step</h4><ol><li>Pause and name what you are feeling without judging yourself.</li><li>Talk with someone you trust if you feel ready.</li><li>Choose one manageable daily activity that supports your routine.</li><li>Contact a qualified professional if distress continues or feels overwhelming.</li></ol></div><a class="lesson-source" href="https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response" target="_blank" rel="noopener">Read WHO mental-health information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="mental-wellbeing"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="oral-care" data-learning-category="hygiene">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🦷</span><span class="learning-topic-label">HYGIENE · 3 MIN</span></div>
+                    <h3>Build a simple oral-care routine</h3><p>Learn the basics of daily tooth care and when to ask a dental professional for help.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video-link"><span class="video-play-icon" aria-hidden="true">▶</span><strong>Video lesson</strong><p>Browse oral-health videos published by the World Health Organization.</p><a href="https://www.youtube.com/results?search_query=WHO+oral+health+toothbrushing+official+video" target="_blank" rel="noopener">Find a WHO oral-health video ↗</a></div>
+                            <div class="lesson-copy"><div><h4>Daily care is useful</h4><p>Good oral health supports eating, speaking, and comfort. A dentist can advise about individual needs and symptoms.</p></div><div><h4>Step by step</h4><ol><li>Use a clean toothbrush and toothpaste recommended for you.</li><li>Brush all tooth surfaces gently as part of a regular routine.</li><li>Clean the toothbrush after use and let it dry.</li><li>Ask a dental professional about pain, bleeding gums, or other concerns.</li></ol></div><a class="lesson-source" href="https://www.who.int/news-room/fact-sheets/detail/oral-health" target="_blank" rel="noopener">Read WHO oral-health information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="oral-care"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="menstrual-health" data-learning-category="hygiene">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🌸</span><span class="learning-topic-label">HYGIENE · 4 MIN</span></div>
+                    <h3>Learn about menstrual hygiene</h3><p>Explore respectful, practical guidance for products, clean hands, and support.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video"><iframe loading="lazy" title="UNICEF India video about menstrual health awareness" src="https://www.youtube-nocookie.com/embed/aKdZEzUlNcY?rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Video by UNICEF India · English audio</p></div>
+                            <div class="lesson-copy"><div><h4>Care with dignity</h4><p>People may choose different menstrual products. Access to clean water, privacy, information, and support are all important.</p></div><div><h4>Step by step</h4><ol><li>Choose a product that is comfortable and available to you.</li><li>Wash hands before and after changing or handling a product.</li><li>Follow the product instructions for changing, washing, or disposal.</li><li>Speak with a health professional about severe pain, unusual symptoms, or questions.</li></ol></div><a class="lesson-source" href="https://www.unicef.org/supply/menstrual-hygiene-products" target="_blank" rel="noopener">Read UNICEF menstrual-hygiene guidance ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="menstrual-health"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="food-safety" data-learning-category="hygiene">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🍲</span><span class="learning-topic-label">HYGIENE · 4 MIN</span></div>
+                    <h3>Keep food preparation safer</h3><p>Use a simple clean, separate, cook, and store routine when preparing food.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video"><iframe loading="lazy" title="WHO Five Keys to Safer Food video" src="https://www.youtube-nocookie.com/embed/ONkKy68HEIM?rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Video by the World Health Organization · English audio</p></div>
+                            <div class="lesson-copy"><div><h4>Keep the food-safety chain in mind</h4><p>Clean hands and surfaces, safe water, and separating raw foods from ready-to-eat foods are useful habits.</p></div><div><h4>Step by step</h4><ol><li>Wash hands and clean the preparation area and utensils.</li><li>Keep raw food separate from cooked or ready-to-eat food.</li><li>Cook food thoroughly and use safe water and ingredients.</li><li>Store food safely and follow local food-safety guidance.</li></ol></div><a class="lesson-source" href="https://www.who.int/news-room/fact-sheets/detail/food-safety" target="_blank" rel="noopener">Read WHO food-safety information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="food-safety"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="clean-surroundings" data-learning-category="hygiene">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🌱</span><span class="learning-topic-label">HYGIENE · 3 MIN</span></div>
+                    <h3>Keep shared spaces cleaner</h3><p>Small household and community actions can support cleaner surroundings.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video"><iframe loading="lazy" title="UNICEF India video about water, sanitation, and hygiene" src="https://www.youtube-nocookie.com/embed/ZVDSNh6NKDM?rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Video by UNICEF India · English audio</p></div>
+                            <div class="lesson-copy"><div><h4>Healthy surroundings are shared work</h4><p>Access to safe water, toilets, and waste services varies by community. Follow local public-health instructions and work with community services.</p></div><div><h4>Step by step</h4><ol><li>Keep household water and food areas clean.</li><li>Use toilets and waste-disposal services safely where available.</li><li>Keep children away from unsafe waste and standing water.</li><li>Report shared sanitation or water concerns to the relevant local service.</li></ol></div><a class="lesson-source" href="https://www.unicef.org/wash" target="_blank" rel="noopener">Explore UNICEF water, sanitation, and hygiene ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="clean-surroundings"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="pregnancy-care" data-learning-category="family">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🤰</span><span class="learning-topic-label">WOMEN &amp; CHILD · 4 MIN</span></div>
+                    <h3>Prepare for pregnancy check-ups</h3><p>Use appointments to ask questions and discuss changes with a qualified health professional.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video-link"><span class="video-play-icon" aria-hidden="true">▶</span><strong>Video lesson</strong><p>Browse pregnancy-care videos from India’s Ministry of Health &amp; Family Welfare.</p><a href="https://www.youtube.com/results?search_query=MoHFW+India+pregnancy+antenatal+care+official+video" target="_blank" rel="noopener">Find a MoHFW video ↗</a></div>
+                            <div class="lesson-copy"><div><h4>Care is individual</h4><p>Pregnancy care depends on each person. A qualified health professional can recommend suitable visits, checks, and support.</p></div><div><h4>Step by step</h4><ol><li>Ask a local health worker how to arrange recommended antenatal visits.</li><li>Bring questions and share any new or worrying symptoms.</li><li>Discuss medicines, supplements, and vaccinations with the professional before making changes.</li><li>Follow the care plan and ask where to seek urgent help if concerns arise.</li></ol></div><a class="lesson-source" href="https://www.who.int/health-topics/maternal-health" target="_blank" rel="noopener">Explore WHO maternal-health information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="pregnancy-care"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="child-nutrition" data-learning-category="family">
+                    <div class="learning-card-top"><span class="learning-topic-icon">👶</span><span class="learning-topic-label">WOMEN &amp; CHILD · 4 MIN</span></div>
+                    <h3>Support a child’s nutrition</h3><p>Learn how caregivers can discuss age-appropriate foods and growth with a health worker.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video"><iframe loading="lazy" title="UNICEF video about feeding young children with care" src="https://www.youtube-nocookie.com/embed/kPK3Q9BbJv8?rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Video published by UNICEF · English audio</p></div>
+                            <div class="lesson-copy"><div><h4>Every child is different</h4><p>Food needs change with a child’s age and health. Ask an Anganwadi worker or qualified health professional for advice suited to the child.</p></div><div><h4>Step by step</h4><ol><li>Ask which foods and textures are suitable for the child’s age.</li><li>Offer safe, clean, varied foods that are available to your family.</li><li>Use clean hands, utensils, and drinking water when preparing food.</li><li>Attend recommended growth checks and ask about any concerns.</li></ol></div><a class="lesson-source" href="https://www.unicef.org/nutrition/child-nutrition" target="_blank" rel="noopener">Read UNICEF child-nutrition information ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="child-nutrition"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="learning-card" id="get-help" data-learning-category="family">
+                    <div class="learning-card-top"><span class="learning-topic-icon">🩺</span><span class="learning-topic-label">GETTING CARE · 3 MIN</span></div>
+                    <h3>Know when and how to get help</h3><p>Prepare useful information for a clinic visit and find the emergency-support page.</p>
+                    <div class="learning-card-includes" aria-label="Included in this lesson"><span><b aria-hidden="true">▶</b> Video</span><span><b aria-hidden="true">✓</b> Guided steps</span><span><b aria-hidden="true">↗</b> Trusted source</span></div>
+                    <details class="learning-details"><summary><span>Start this lesson</span><span class="summary-arrow" aria-hidden="true">＋</span></summary>
+                        <div class="lesson-content"><div class="lesson-video-link"><span class="video-play-icon" aria-hidden="true">▶</span><strong>Video lesson</strong><p>Open India’s Ministry of Health video about check-ups and seeking appropriate care.</p><a href="https://www.youtube.com/watch?v=d9-5xmyvtpE" target="_blank" rel="noopener">Watch the MoHFW video ↗</a></div>
+                            <div class="lesson-copy"><div><h4>Get the right support</h4><p>This lesson does not diagnose symptoms. For a serious or sudden emergency, use local emergency services or go to the nearest emergency department.</p></div><div><h4>Step by step</h4><ol><li>For urgent danger or a sudden severe problem, seek emergency help now.</li><li>For a clinic visit, note when the concern began and what has changed.</li><li>Bring a list of medicines or questions if you can.</li><li>Ask the health professional what to do next and where to return if things worsen.</li></ol></div><a class="lesson-source" href="emergency.html">Open Emergency Support on this website ↗</a></div>
+                            <label class="lesson-complete"><input type="checkbox" data-learning-complete="get-help"><span>Mark this lesson as learned</span></label>
+                        </div>
+                    </details>
+                </article>
+            </div>
+            <p class="learning-health-note"><strong>Health notice:</strong> These lessons share general awareness information. They do not diagnose a condition or replace care from a qualified health professional. Video availability and language depend on the publisher and your internet connection.</p>
+        </section>
+    </main>
+
+    <script src="js/media-content.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/project-interactions.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

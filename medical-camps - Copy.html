@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medical Camps | HealthCare+</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a class="logo" href="index.html" aria-label="HealthCare+ home">
+            <span class="logo-icon" aria-hidden="true">✚</span>
+            <span>HealthCare<span class="logo-plus">+</span></span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="health-awareness.html">Health Awareness</a>
+            <a href="hygiene.html">Hygiene</a>
+            <a href="learning-centre.html">Learning Centre</a>
+            <a href="women-child-health.html">Women &amp; Child Health</a>
+            <a href="medical-camps.html" class="active" aria-current="page">Medical Camps</a>
+            <a href="emergency.html">Emergency Support</a>
+            <a href="index.html#ai-assistant">AI Assistant</a>
+            <a href="about.html">About</a>
+            <div class="language-picker"><label for="languageSelect">Language</label><select id="languageSelect" aria-label="Select language"><option value="en">English</option><option value="mr">मराठी</option><option value="hi">हिंदी</option></select><span class="language-status" id="languageStatus" role="status" aria-live="polite"></span></div>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false">
+            <span class="menu-line"></span><span class="menu-line"></span><span class="menu-line"></span>
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= PAGE HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-tag">
+                    COMMUNITY HEALTHCARE
+                </p>
+
+                <h1>
+
+                    Medical Camps
+
+                    <br>
+
+                    <span>
+                        Healthcare Closer To You.
+                    </span>
+
+                </h1>
+
+                <p class="hero-description">
+
+                    Free and accessible medical camps can help
+                    communities receive basic health screening,
+                    professional guidance and health awareness.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#upcoming-camps" class="primary-btn">
+                        View Camps
+                    </a>
+
+                    <a href="index.html" class="secondary-btn">
+                        ← Back to Home
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="hero-card">
+
+                    <div class="doctor-icon">
+                        🏥
+                    </div>
+
+                    <h3>
+                        Community Healthcare
+                    </h3>
+
+                    <p>
+                        Check-up • Guidance • Awareness
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= UPCOMING CAMPS ================= -->
+
+        <section class="services-section" id="upcoming-camps">
+
+            <div class="section-heading">
+
+                <p class="section-tag">
+                    UPCOMING MEDICAL CAMPS
+                </p>
+
+                <h2>
+
+                    Find Healthcare
+
+                    <span>
+                        Near Your Community.
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Check the available medical camp information
+                    and learn about the healthcare services that
+                    may be provided.
+
+                </p>
+
+            </div>
+
+
+            <div class="interaction-panel camp-explorer" id="campExplorer">
+                <div>
+                    <label for="campSearch">Search camp listings</label>
+                    <input id="campSearch" type="search" placeholder="Search by camp or topic">
+                </div>
+                <div>
+                    <label for="campCategoryFilter">Filter by focus</label>
+                    <select id="campCategoryFilter">
+                        <option value="all">All listings</option>
+                        <option value="general">General check-up</option>
+                        <option value="women">Women's health</option>
+                        <option value="child">Child health</option>
+                    </select>
+                </div>
+                <p class="interaction-status" data-camp-status role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="services-grid">
+
+
+                <!-- CAMP 1 -->
+
+                <div class="service-card camp-listing" data-camp-category="general">
+
+                    <div class="service-icon">
+                        🏥
+                    </div>
+
+                    <h3>
+                        Free Health Check-up Camp
+                    </h3>
+
+                    <p>
+
+                        Basic health screening and consultation
+                        with qualified healthcare professionals.
+
+                    </p>
+
+                    <p>
+                        🗓️ <strong>20 November 2026</strong>
+                    </p>
+
+                    <p>
+                        📍 Community Health Centre
+                    </p>
+
+                    <button class="camp-save-button" type="button" data-save-camp="check-up" aria-pressed="false">Save for later</button>
+
+                </div>
+
+
+
+                <!-- CAMP 2 -->
+
+                <div class="service-card camp-listing" data-camp-category="women">
+
+                    <div class="service-icon">
+                        🩺
+                    </div>
+
+                    <h3>
+                        Women Health Camp
+                    </h3>
+
+                    <p>
+
+                        Health awareness, basic screening and
+                        guidance focused on women's health.
+
+                    </p>
+
+                    <p>
+                        🗓️ <strong>25 November 2026</strong>
+                    </p>
+
+                    <p>
+                        📍 Rural Community Centre
+                    </p>
+
+                    <button class="camp-save-button" type="button" data-save-camp="women-health" aria-pressed="false">Save for later</button>
+
+                </div>
+
+
+
+                <!-- CAMP 3 -->
+
+                <div class="service-card camp-listing" data-camp-category="child">
+
+                    <div class="service-icon">
+                        👨‍👩‍👧
+                    </div>
+
+                    <h3>
+                        Child Health & Nutrition Camp
+                    </h3>
+
+                    <p>
+
+                        Awareness about child nutrition,
+                        healthy development and basic health.
+
+                    </p>
+
+                    <p>
+                        🗓️ <strong>Coming Soon</strong>
+                    </p>
+
+                    <p>
+                        📍 Local Community Area
+                    </p>
+
+                    <button class="camp-save-button" type="button" data-save-camp="child-nutrition" aria-pressed="false">Save for later</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SERVICES PROVIDED ================= -->
+
+        <section class="awareness-section">
+
+            <div class="awareness-content">
+
+                <p class="section-tag">
+                    BASIC SERVICES
+                </p>
+
+                <h2>
+
+                    What Can You
+
+                    <span>
+                        Expect?
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Depending on the camp and availability of
+                    healthcare professionals, basic services may
+                    include the following.
+
+                </p>
+
+
+                <div class="women-points">
+
+
+                    <div class="women-point">
+
+                        <div class="point-icon">
+                            🩺
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Basic Health Check-up
+                            </h3>
+
+                            <p>
+                                Basic health measurements and
+                                general health assessment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="women-point">
+
+                        <div class="point-icon">
+                            🩸
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Basic Screening
+                            </h3>
+
+                            <p>
+                                Basic screening services may be
+                                available depending on the camp.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="women-point">
+
+                        <div class="point-icon">
+                            👨‍⚕️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Professional Guidance
+                            </h3>
+
+                            <p>
+                                Get general health guidance from
+                                qualified healthcare professionals.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="women-point">
+
+                        <div class="point-icon">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Health Awareness
+                            </h3>
+
+                            <p>
+                                Learn about prevention, hygiene,
+                                nutrition and healthy living.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section class="services-section">
+
+            <div class="section-heading">
+
+                <p class="section-tag">
+                    HOW IT WORKS
+                </p>
+
+                <h2>
+
+                    Medical Camp
+
+                    <span>
+                        Process
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="services-grid">
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        1️⃣
+                    </div>
+
+                    <h3>
+                        Camp Announcement
+                    </h3>
+
+                    <p>
+                        Information about the date, location
+                        and available services is announced.
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        2️⃣
+                    </div>
+
+                    <h3>
+                        Visit the Camp
+                    </h3>
+
+                    <p>
+                        Community members can visit the camp
+                        at the scheduled location.
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        3️⃣
+                    </div>
+
+                    <h3>
+                        Health Check-up
+                    </h3>
+
+                    <p>
+                        Basic health screening and consultation
+                        may be provided.
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        4️⃣
+                    </div>
+
+                    <h3>
+                        Health Guidance
+                    </h3>
+
+                    <p>
+                        Participants receive appropriate
+                        health awareness and guidance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= IMPORTANT NOTE ================= -->
+
+        <section class="women-section">
+
+            <div class="women-content">
+
+                <p class="section-tag">
+                    IMPORTANT INFORMATION
+                </p>
+
+                <h2>
+
+                    Your Health
+
+                    <span>
+                        Matters.
+                    </span>
+
+                </h2>
+
+                <p class="women-description">
+
+                    Medical camps provide basic healthcare
+                    awareness and screening. They should not
+                    replace regular medical care when professional
+                    diagnosis or treatment is required.
+
+                </p>
+
+
+                <div class="women-points">
+
+                    <div class="women-point">
+
+                        <div class="point-icon">
+                            ⚠️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Seek Professional Care
+                            </h3>
+
+                            <p>
+                                Consult a qualified healthcare
+                                professional for serious or
+                                persistent symptoms.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="women-point">
+
+                        <div class="point-icon">
+                            📅
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Check Camp Information
+                            </h3>
+
+                            <p>
+                                Demonstration listings only; dates and locations are not confirmed bookings.
+                                Confirm official details with the local organiser before visiting.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <a href="emergency.html" class="primary-btn">
+                    Emergency Help →
+                </a>
+
+            </div>
+
+
+            <div class="women-visual">
+
+                <div class="health-circle">
+                    🏥
+                </div>
+
+                <div class="mini-health-card card-top">
+                    🩺 Health Check-up
+                </div>
+
+                <div class="mini-health-card card-bottom">
+                    💙 Health Awareness
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            🏥 HealthCare+
+        </div>
+
+        <p>
+            Health & Hygiene Awareness | CEP Project 2.0
+        </p>
+
+        <p>
+            © 2026 HealthCare+. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+<script src="./js/i18n.js"></script>
+<script src="./js/project-interactions.js"></script>
+<script src="./js/script.js"></script>
+
+</body>
+
+</html>

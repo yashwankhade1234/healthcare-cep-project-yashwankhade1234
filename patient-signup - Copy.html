@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Registration | HealthCare+</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eefafa, #ffffff);
+            color: #173f4b;
+        }
+
+        .signup-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+        }
+
+        .signup-box {
+            width: 100%;
+            max-width: 850px;
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 25px 70px rgba(20, 100, 110, 0.14);
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .signup-logo {
+            color: #19a7a8;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .signup-header h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+        }
+
+        .signup-header p {
+            margin: 0;
+            color: #7a898e;
+            font-size: 14px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 7px;
+            color: #385860;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #dceaea;
+            border-radius: 10px;
+            outline: none;
+            font-size: 13px;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #19a7a8;
+            box-shadow: 0 0 0 3px rgba(25, 167, 168, 0.08);
+        }
+
+        .mobile-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        .country-code {
+            width: 75px !important;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .mobile-input {
+            flex: 1;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 45px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+            border: 0;
+            padding: 4px;
+            background: transparent;
+        }
+
+        .form-feedback {
+            margin: 12px 0 0;
+            color: #075f63;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .form-feedback:empty {
+            display: none;
+        }
+
+        .form-feedback.error {
+            color: #b42332;
+        }
+
+        .language-picker {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 14px;
+            color: #3d5967;
+            font-size: 12px;
+        }
+
+        .language-picker select {
+            padding: 7px 9px;
+            border: 1px solid #cfe0e2;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #173b4d;
+        }
+
+        .language-status {
+            flex-basis: 100%;
+            text-align: right;
+            color: #075f63;
+            font-size: 11px;
+        }
+
+        .terms {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            color: #718087;
+            font-size: 12px;
+            line-height: 1.5;
+            margin-top: 5px;
+        }
+
+        .terms input {
+            margin-top: 3px;
+        }
+
+        .terms a {
+            color: #19a7a8;
+            text-decoration: none;
+        }
+
+        .signup-btn {
+            grid-column: 1 / -1;
+            border: none;
+            background: #19a7a8;
+            color: white;
+            padding: 14px;
+            border-radius: 11px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background: #138b8c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(25, 167, 168, 0.20);
+        }
+
+        .bottom-text {
+            text-align: center;
+            color: #7a898e;
+            font-size: 13px;
+            margin-top: 22px;
+        }
+
+        .bottom-text a {
+            color: #19a7a8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-home {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            color: #19a7a8;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        /* OTP BOX */
+
+        .otp-box {
+            display: none;
+            margin-top: 25px;
+            padding: 22px;
+            background: #f3fbfb;
+            border: 1px solid #d9eeee;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .otp-box.active {
+            display: block;
+        }
+
+        .otp-box h3 {
+            margin: 0 0 7px;
+            font-size: 18px;
+        }
+
+        .otp-box p {
+            margin: 0 0 15px;
+            color: #718087;
+            font-size: 12px;
+        }
+
+        .otp-input {
+            width: 180px;
+            padding: 13px;
+            text-align: center;
+            letter-spacing: 6px;
+            border: 1px solid #cfe4e5;
+            border-radius: 10px;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .verify-btn {
+            display: block;
+            margin: 15px auto 0;
+            border: none;
+            background: #19a7a8;
+            color: white;
+            padding: 11px 25px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        @media (max-width: 650px) {
+
+            .signup-box {
+                padding: 28px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full,
+            .terms,
+            .signup-btn {
+                grid-column: auto;
+            }
+
+            .signup-header h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="signup-page">
+
+    <div class="signup-box">
+
+        <div class="language-picker">
+            <label for="languageSelect">Language</label>
+            <select id="languageSelect" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+                <option value="hi">हिंदी</option>
+            </select>
+            <span class="language-status" id="languageStatus" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="signup-header">
+
+            <div class="signup-logo">
+                ✚ HealthCare+
+            </div>
+
+            <h1>Create Patient Account</h1>
+
+            <p>
+                Register to access HealthCare+ services and support.
+            </p>
+
+        </div>
+
+
+        <!-- REGISTRATION FORM -->
+
+        <form id="signupForm">
+
+            <div class="form-grid">
+
+                <!-- FULL NAME -->
+
+                <div class="form-group full">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+                <!-- MOBILE -->
+
+                <div class="form-group">
+
+                    <label for="mobile">
+                        Mobile Number
+                    </label>
+
+                    <div class="mobile-box">
+
+                        <input
+                            class="country-code"
+                            type="text"
+                            value="+91"
+                            readonly>
+
+                        <input
+                            class="mobile-input"
+                            type="tel"
+                            id="mobile"
+                            placeholder="10-digit mobile number"
+                            maxlength="10"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AGE -->
+
+                <div class="form-group">
+
+                    <label for="age">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        min="1"
+                        max="120"
+                        placeholder="Enter age"
+                        required>
+
+                </div>
+
+
+                <!-- GENDER -->
+
+                <div class="form-group">
+
+                    <label for="gender">
+                        Gender
+                    </label>
+
+                    <select id="gender" required>
+
+                        <option value="">
+                            Select gender
+                        </option>
+
+                        <option value="male">
+                            Male
+                        </option>
+
+                        <option value="female">
+                            Female
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                            aria-label="Show password"
+                            aria-pressed="false">
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showConfirmPassword"
+                            aria-label="Show password"
+                            aria-pressed="false">
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required>
+
+                    <span>
+                        I agree to the HealthCare+ terms and
+                        understand that this platform provides
+                        general health awareness information.
+                    </span>
+
+                </label>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="signup-btn">
+
+                    📱 Continue with Mobile OTP
+
+                </button>
+
+            </div>
+
+        </form>
+
+        <p class="form-feedback" id="signupStatus" role="status" aria-live="polite"></p>
+
+
+        <!-- OTP -->
+
+        <div class="otp-box" id="otpBox">
+
+            <h3>📱 Verify Mobile Number</h3>
+
+            <p>
+                This local demo does not send SMS. Enter demo code <strong>123456</strong> to continue.
+            </p>
+
+            <input
+                class="otp-input"
+                type="text"
+                id="otp"
+                maxlength="6"
+                placeholder="••••••">
+
+            <button
+                type="button"
+                class="verify-btn"
+                id="verifyOtp">
+
+                Verify OTP
+
+            </button>
+
+        </div>
+
+
+        <p class="bottom-text">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </p>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    // ===============================
+    // PASSWORD SHOW / HIDE
+    // ===============================
+
+    function passwordToggle(buttonId, inputId) {
+
+        const button =
+            document.getElementById(buttonId);
+
+        const input =
+            document.getElementById(inputId);
+
+        button.addEventListener("click", function () {
+
+            if (input.type === "password") {
+
+                input.type = "text";
+                button.textContent = "🙈";
+                button.setAttribute("aria-label", "Hide password");
+                button.setAttribute("aria-pressed", "true");
+
+            } else {
+
+                input.type = "password";
+                button.textContent = "👁️";
+                button.setAttribute("aria-label", "Show password");
+                button.setAttribute("aria-pressed", "false");
+
+            }
+
+        });
+    }
+
+    passwordToggle(
+        "showPassword",
+        "password"
+    );
+
+    passwordToggle(
+        "showConfirmPassword",
+        "confirmPassword"
+    );
+
+
+    // ===============================
+    // REGISTRATION
+    // ===============================
+
+    const signupForm =
+        document.getElementById("signupForm");
+
+    const otpBox =
+        document.getElementById("otpBox");
+
+    const signupStatus =
+        document.getElementById("signupStatus");
+
+    function showSignupStatus(message, isError) {
+        signupStatus.textContent = message;
+        signupStatus.classList.toggle("error", Boolean(isError));
+    }
+
+
+    signupForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const mobile =
+                document.getElementById("mobile")
+                .value.trim();
+
+            const password =
+                document.getElementById("password")
+                .value;
+
+            const confirmPassword =
+                document.getElementById("confirmPassword")
+                .value;
+
+
+            // Mobile validation
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+
+                showSignupStatus("Enter a valid 10-digit mobile number.", true);
+
+                return;
+            }
+
+
+            // Password validation
+
+            if (password.length < 6) {
+
+                showSignupStatus("Password must contain at least 6 characters.", true);
+
+                return;
+            }
+
+
+            // Confirm password
+
+            if (password !== confirmPassword) {
+
+                showSignupStatus("The passwords do not match. Please check both fields.", true);
+
+                return;
+            }
+
+
+            // Show OTP section
+
+            otpBox.classList.add("active");
+            showSignupStatus("Demo verification is ready. Enter 123456 below; no SMS was sent.", false);
+            document.getElementById("otp").focus();
+
+        }
+    );
+
+
+    // ===============================
+    // OTP VERIFY DEMO
+    // ===============================
+
+    document
+        .getElementById("verifyOtp")
+        .addEventListener("click", function () {
+
+            const otp =
+                document.getElementById("otp")
+                .value.trim();
+
+
+            if (!/^[0-9]{6}$/.test(otp)) {
+
+                showSignupStatus("Enter the 6-digit demo code 123456.", true);
+
+                return;
+            }
+
+            if (otp !== "123456") {
+                showSignupStatus("That code is not correct. Enter the demo code 123456.", true);
+                return;
+            }
+
+            showSignupStatus(
+                "Demo verification complete. No SMS was sent and no account was saved because registration is not connected to an account service.",
+                false
+            );
+
+        });
+
+</script>
+<script src="./js/i18n.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content Admin | HealthCare+</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+    <header class="admin-header">
+        <a class="logo" href="index.html"><span class="logo-icon" aria-hidden="true">✚</span><span>HealthCare<span class="logo-plus">+</span></span></a>
+        <a class="admin-back-link" href="index.html">← View website</a>
+    </header>
+    <main class="admin-shell">
+        <section class="admin-login-card" id="adminLoginPanel">
+            <p class="admin-eyebrow">PRIVATE CONTENT MANAGER</p>
+            <h1>Welcome back.</h1>
+            <p>Sign in to update lesson information and language-specific video links.</p>
+            <form id="adminLoginForm">
+                <label for="adminPassword">Admin password</label>
+                <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+                <button class="admin-primary-button" type="submit">Sign in</button>
+                <p class="admin-message" id="adminLoginMessage" role="status"></p>
+            </form>
+        </section>
+
+        <section class="admin-editor" id="adminEditor" hidden>
+            <div class="admin-page-heading">
+                <div><p class="admin-eyebrow">HEALTHCARE+ CONTENT</p><h1>Manage learning videos</h1><p>Update the guide and video together. Changes are saved on this website server.</p></div>
+                <button class="admin-quiet-button" id="adminLogout" type="button">Sign out</button>
+            </div>
+            <div class="admin-editor-grid">
+                <aside class="admin-select-panel">
+                    <label for="adminCollection">Page</label>
+                    <select id="adminCollection"><option value="learning">Learning Centre</option><option value="hygiene">Hygiene</option></select>
+                    <label for="adminItem">Topic</label>
+                    <select id="adminItem"></select>
+                    <p>Choose a topic to edit its text, steps, source and videos.</p>
+                    <div class="admin-save-card"><button class="admin-primary-button" id="adminSave" type="button">Save changes</button><p id="adminSaveMessage" class="admin-message" role="status"></p></div>
+                </aside>
+                <form class="admin-fields" id="adminContentForm">
+                    <section class="admin-field-group">
+                        <p class="admin-field-kicker">LESSON CONTENT</p>
+                        <label for="editTitle">Topic title</label><input id="editTitle" maxlength="160" required>
+                        <label for="editSummary">Short introduction</label><textarea id="editSummary" rows="2" maxlength="700"></textarea>
+                        <label for="editRelated">Related information beside the video</label><textarea id="editRelated" rows="4" maxlength="1800"></textarea>
+                        <label for="editSteps">Step-by-step guide <span>One step per line</span></label><textarea id="editSteps" rows="6" maxlength="3000"></textarea>
+                        <label for="editSource">Trusted source link</label><input id="editSource" type="url" placeholder="https://...">
+                    </section>
+                    <section class="admin-field-group">
+                        <p class="admin-field-kicker">VIDEO LINKS BY LANGUAGE</p>
+                        <label for="editVideoEn">English video URL</label><input id="editVideoEn" type="url" placeholder="YouTube video link">
+                        <label for="editVideoMr">Marathi video URL</label><input id="editVideoMr" type="url" placeholder="Marathi YouTube link">
+                        <label for="editVideoHi">Hindi video URL</label><input id="editVideoHi" type="url" placeholder="Hindi YouTube link">
+                        <p class="admin-help-note">Upload the video to YouTube as Public or Unlisted, then paste its link here. The page switches to the selected language’s video. Empty language fields use the original video.</p>
+                    </section>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="js/admin.js"></script>
+</body>
+</html>

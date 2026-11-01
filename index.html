@@ -1,0 +1,953 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ 
+    <title>HealthCare+ | Health & Hygiene Awareness</title> 
+ 
+    <link rel="stylesheet" href="./css/style.css"> 
+</head> 
+ 
+<body> 
+ 
+    <!-- ================= FLOATING AI ASSISTANT ================= --> 
+ 
+    <div class="floating-ai" id="ai-assistant"> 
+ 
+        <button class="ai-float-btn" id="aiFloatBtn" type="button" aria-label="Open health assistant" aria-expanded="false"> 
+            🤖 
+        </button> 
+ 
+        <div class="ai-chat-popup" id="aiChatPopup" role="region" aria-label="Health awareness assistant"> 
+ 
+            <div class="ai-popup-header"> 
+ 
+                <div> 
+                    <strong>🤖 HealthCare+ Health Assistant</strong> 
+                    <small id="aiModeLabel">Local demo · Add an API key for live AI</small>
+                </div> 
+ 
+                <button id="closeAiChat" type="button" aria-label="Close health assistant">×</button> 
+ 
+            </div> 
+ 
+            <div class="ai-popup-messages" id="aiPopupMessages"> 
+ 
+                <div class="popup-bot-message" data-i18n-ignore> 
+                    Hello! I can share general information about health and hygiene. What would you like to know? 
+                </div> 
+ 
+            </div> 
+ 
+            <div class="ai-popup-input"> 
+ 
+                <input 
+                    type="text" 
+                    id="aiPopupInput" 
+                    placeholder="Ask a health question..." 
+                    aria-label="Ask a health question" 
+                    autocomplete="off" 
+                > 
+
+                <button id="aiMicBtn" type="button" aria-label="Start voice input" title="Speak your question">🎙️</button>
+ 
+                <button id="aiPopupSend" type="button" aria-label="Send question"> 
+                    ➤ 
+                </button> 
+ 
+            </div> 
+
+            <div class="ai-popup-tools">
+                <button id="aiVoiceToggle" type="button" aria-pressed="false">🔈 Speak replies: Off</button>
+                <span id="aiPopupStatus" role="status" aria-live="polite"></span>
+            </div>
+
+            <p class="ai-voice-privacy">Voice input may use your browser's speech service. Avoid sharing sensitive personal details.</p>
+            <p class="ai-live-privacy">In live AI mode, your question is sent to the configured AI service. Do not include personal or sensitive medical details.</p>
+ 
+            <div class="ai-popup-warning"> 
+                General health information only. Not a diagnosis or a substitute for professional care. 
+            </div> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+    <!-- ================= NAVBAR ================= --> 
+ 
+    <header class="navbar"> 
+ 
+        <a class="logo" href="index.html" aria-label="HealthCare+ home">
+            <span class="logo-icon" aria-hidden="true">✚</span>
+            <span>HealthCare<span class="logo-plus">+</span></span>
+        </a>
+ 
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation"> 
+ 
+            <a href="index.html" class="active" aria-current="page"> 
+                Home 
+            </a> 
+ 
+            <a href="health-awareness.html"> 
+                Health Awareness 
+            </a> 
+ 
+            <a href="hygiene.html"> 
+                Hygiene 
+            </a> 
+
+            <a href="learning-centre.html">Learning Centre</a>
+
+            <a href="women-child-health.html">Women &amp; Child Health</a>
+ 
+            <a href="medical-camps.html"> 
+                Medical Camps 
+            </a> 
+
+            <a href="emergency.html">Emergency Support</a>
+ 
+            <a href="#ai-assistant" id="navAiBtn"> 
+                AI Assistant 
+            </a> 
+ 
+            <a href="about.html"> 
+                About 
+            </a> 
+
+            <div class="language-picker">
+                <label for="languageSelect">Language</label>
+                <select id="languageSelect" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="mr">मराठी</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+                <span class="language-status" id="languageStatus" role="status" aria-live="polite"></span>
+            </div>
+
+            <a href="login.html" class="login-btn">Login</a>
+ 
+        </nav> 
+ 
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false">
+            <span class="menu-line"></span><span class="menu-line"></span><span class="menu-line"></span>
+        </button> 
+ 
+    </header> 
+ 
+    <!-- ================= MAIN ================= --> 
+ 
+    <main> 
+ 
+        <!-- ================= HERO ================= --> 
+ 
+        <section class="hero" id="home"> 
+ 
+            <div class="hero-content"> 
+ 
+                <p class="hero-tag"> 
+                    HEALTH & HYGIENE AWARENESS 
+                </p> 
+ 
+                <h1> 
+                    Better Health 
+                    <br> 
+                    Starts With 
+                    <span> 
+                        Awareness. 
+                    </span> 
+                </h1> 
+ 
+                <p class="hero-description"> 
+                    Simple, reliable and accessible healthcare information 
+                    designed to help individuals and communities make 
+                    better health decisions. 
+                </p> 
+ 
+                <div class="hero-buttons"> 
+ 
+                    <a href="learning-centre.html" class="primary-btn"> 
+                        Explore Health 
+                    </a> 
+ 
+                    <a href="#ai-assistant" class="secondary-btn" id="heroAiBtn"> 
+                        🤖 Open Health Assistant Demo 
+                    </a> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+            <div class="hero-visual"> 
+ 
+                <div class="hero-card"> 
+ 
+                    <div class="doctor-icon"> 
+                        🧑‍⚕️ 
+                    </div> 
+ 
+                    <h3> 
+                        Your Health Matters 
+                    </h3> 
+ 
+                    <p> 
+                        Learn • Prevent • Stay Healthy 
+                    </p> 
+ 
+                </div> 
+ 
+                <div class="floating-card card-one"> 
+                    🩺 
+                    <span> 
+                        Basic Healthcare 
+                    </span> 
+                </div> 
+ 
+                <div class="floating-card card-two"> 
+                    🧼 
+                    <span> 
+                        Healthy Hygiene 
+                    </span> 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+        <!-- ================= HEALTH SERVICES ================= --> 
+ 
+        <section class="services-section" id="health"> 
+ 
+            <div class="section-heading"> 
+ 
+                <p class="section-tag"> 
+                    OUR HEALTH SERVICES 
+                </p> 
+ 
+                <h2> 
+                    Healthcare Support 
+                    <span> 
+                        For Everyone. 
+                    </span> 
+                </h2> 
+ 
+                <p> 
+                    Simple and accessible healthcare resources designed 
+                    to promote awareness, prevention and healthy living. 
+                </p> 
+ 
+            </div> 
+
+            <form class="interaction-panel service-finder" id="serviceNavigator">
+                <div>
+                    <label for="serviceGoal">Choose what you need</label>
+                    <select id="serviceGoal" required>
+                        <option value="" selected disabled>Select a health resource</option>
+                        <option value="learning-centre.html">Guided health lessons</option>
+                        <option value="hygiene.html">Hygiene guidance</option>
+                        <option value="women-child-health.html#community-training">Women's health learning</option>
+                        <option value="medical-camps.html">Medical camp information</option>
+                        <option value="emergency.html">Emergency support</option>
+                        <option value="index.html#ai-assistant">Ask the health assistant</option>
+                    </select>
+                </div>
+                <button class="interaction-button" type="submit">Find a resource <span aria-hidden="true">→</span></button>
+            </form>
+ 
+            <div class="services-grid"> 
+ 
+                <div class="service-card"> 
+ 
+                    <div class="service-icon"> 
+                        🩺 
+                    </div> 
+ 
+                    <h3> 
+                        Basic Healthcare 
+                    </h3> 
+ 
+                    <p> 
+                        Get simple and verified information about 
+                        common health problems, symptoms and prevention. 
+                    </p> 
+ 
+                    <a href="learning-centre.html"> 
+                        Learn More → 
+                    </a> 
+ 
+                </div> 
+ 
+                <div class="service-card"> 
+ 
+                    <div class="service-icon"> 
+                        🧼 
+                    </div> 
+ 
+                    <h3> 
+                        Hygiene Awareness 
+                    </h3> 
+ 
+                    <p> 
+                        Learn about personal hygiene, sanitation, 
+                        clean water and healthy everyday practices. 
+                    </p> 
+ 
+                    <a href="hygiene.html"> 
+                        Explore Hygiene → 
+                    </a> 
+ 
+                </div> 
+ 
+                <div class="service-card"> 
+ 
+                    <div class="service-icon"> 
+                        👩‍🍼 
+                    </div> 
+ 
+                    <h3> 
+                        Women & Child Health 
+                    </h3> 
+ 
+                    <p> 
+                        Awareness about maternal health, child nutrition 
+                        and menstrual hygiene management. 
+                    </p> 
+ 
+                    <a href="women-child-health.html"> 
+                        Learn More → 
+                    </a> 
+ 
+                </div> 
+ 
+                <div class="service-card"> 
+ 
+                    <div class="service-icon"> 
+                        🏥 
+                    </div> 
+ 
+                    <h3> 
+                        Medical Camps 
+                    </h3> 
+ 
+                    <p> 
+                        Find information about free medical check-up 
+                        camps conducted with local health professionals. 
+                    </p> 
+ 
+                    <a href="medical-camps.html"> 
+                        View Camps → 
+                    </a> 
+ 
+                </div> 
+ 
+                <div class="service-card"> 
+ 
+                    <div class="service-icon"> 
+                        🤖 
+                    </div> 
+ 
+                    <h3> 
+                        Health Assistant Demo 
+                    </h3> 
+ 
+                    <p> 
+                        Get general health-awareness information from a simple, local demo assistant. 
+                    </p> 
+ 
+                    <a href="#ai-assistant" id="serviceAiBtn"> 
+                        Open Assistant → 
+                    </a> 
+ 
+                </div> 
+ 
+                <div class="service-card emergency-card"> 
+ 
+                    <div class="service-icon"> 
+                        🚑 
+                    </div> 
+ 
+                    <h3> 
+                        Emergency Support 
+                    </h3> 
+ 
+                    <p> 
+                        Access emergency healthcare information and 
+                        quickly find appropriate medical assistance. 
+                    </p> 
+ 
+                    <a href="emergency.html"> 
+                        Get Help → 
+                    </a> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+        <!-- ================= HEALTH & HYGIENE AWARENESS ================= --> 
+ 
+        <section class="awareness-section" id="hygiene"> 
+ 
+            <div class="awareness-content"> 
+ 
+                <p class="section-tag"> 
+                    HEALTH & HYGIENE 
+                </p> 
+ 
+                <h2> 
+                    Small Habits, 
+                    <span> 
+                        Big Difference. 
+                    </span> 
+                </h2> 
+ 
+                <p> 
+                    Healthy habits and proper hygiene can help prevent 
+                    many common illnesses and improve quality of life. 
+                </p> 
+ 
+                <div class="hero-buttons"> 
+ 
+                    <a href="hygiene.html" class="primary-btn"> 
+                        Explore Hygiene → 
+                    </a> 
+ 
+                    <a href="health-awareness.html" class="secondary-btn"> 
+                        Health Awareness → 
+                    </a> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+        <!-- ================= WOMEN & CHILD HEALTH ================= --> 
+ 
+        <section class="women-section" id="women"> 
+ 
+            <div class="women-content"> 
+ 
+                <p class="section-tag"> 
+                    WOMEN & CHILD HEALTH 
+                </p> 
+ 
+                <h2> 
+                    Healthy Women, 
+                    <span> 
+                        Healthy Families. 
+                    </span> 
+                </h2> 
+ 
+                <p class="women-description"> 
+                    Awareness about maternal health, child nutrition and 
+                    menstrual hygiene can help build healthier families 
+                    and stronger communities. 
+                </p> 
+ 
+                <div class="women-points"> 
+ 
+                    <div class="women-point"> 
+ 
+                        <div class="point-icon"> 
+                            🤰 
+                        </div> 
+ 
+                        <div> 
+ 
+                            <h3> 
+                                Maternal Health 
+                            </h3> 
+ 
+                            <p> 
+                                Learn about pregnancy care, nutrition 
+                                and regular health check-ups. 
+                            </p> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+                    <div class="women-point"> 
+ 
+                        <div class="point-icon"> 
+                            🥗 
+                        </div> 
+ 
+                        <div> 
+ 
+                            <h3> 
+                                Child Nutrition 
+                            </h3> 
+ 
+                            <p> 
+                                Understand the importance of balanced 
+                                nutrition for healthy child development. 
+                            </p> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+                    <div class="women-point"> 
+ 
+                        <div class="point-icon"> 
+                            🩸 
+                        </div> 
+ 
+                        <div> 
+ 
+                            <h3> 
+                                Menstrual Hygiene 
+                            </h3> 
+ 
+                            <p> 
+                                Promote safe, healthy and informed 
+                                menstrual hygiene practices. 
+                            </p> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+                <br> 
+ 
+                <a href="women-child-health.html" class="primary-btn"> 
+                    Explore Women & Child Health → 
+                </a> 
+ 
+            </div> 
+ 
+            <div class="women-visual"> 
+ 
+                <div class="health-circle"> 
+                    👩‍🍼 
+                </div> 
+ 
+                <div class="mini-health-card card-top"> 
+                    ❤️ Regular Check-ups 
+                </div> 
+ 
+                <div class="mini-health-card card-bottom"> 
+                    🌱 Healthy Lifestyle 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+        <!-- ================= MEDICAL CAMPS ================= --> 
+ 
+        <section class="camps-section" id="camps"> 
+ 
+            <div class="camps-header"> 
+ 
+                <p class="section-tag"> 
+                    MEDICAL CAMPS 
+                </p> 
+ 
+                <h2> 
+                    Healthcare 
+                    <span> 
+                        Closer To You. 
+                    </span> 
+                </h2> 
+ 
+                <p> 
+                    Free medical check-up camps can help communities 
+                    access basic healthcare, health screening and 
+                    professional medical guidance. 
+                </p> 
+ 
+            </div> 
+ 
+            <div class="camps-container"> 
+ 
+                <!-- CAMP CARD 1 --> 
+ 
+                <div class="camp-card"> 
+ 
+                    <div class="camp-top"> 
+ 
+                        <div class="camp-icon"> 
+                            🏥 
+                        </div> 
+ 
+                        <span class="camp-status"> 
+                            SAMPLE 
+                        </span> 
+ 
+                    </div> 
+ 
+                    <h3> 
+                        Free Health Check-up Camp 
+                    </h3> 
+ 
+                    <p class="camp-info"> 
+                        🗓️ Sample date: 20 November 2026 
+                    </p> 
+ 
+                    <p class="camp-info"> 
+                        📍 Example venue: Community Health Centre 
+                    </p> 
+ 
+                    <p class="camp-description"> 
+                        Basic health screening and consultation 
+                        with local healthcare professionals. 
+                    </p> 
+ 
+                    <!-- CHANGED: BUTTON CONNECTED --> 
+                    <a href="medical-camps.html" class="camp-btn"> 
+                        View Details → 
+                    </a> 
+ 
+                </div> 
+ 
+                <!-- CAMP CARD 2 --> 
+ 
+                <div class="camp-card"> 
+ 
+                    <div class="camp-top"> 
+ 
+                        <div class="camp-icon"> 
+                            🩺 
+                        </div> 
+ 
+                        <span class="camp-status"> 
+                            SAMPLE 
+                        </span> 
+ 
+                    </div> 
+ 
+                    <h3> 
+                        Women Health Camp 
+                    </h3> 
+ 
+                    <p class="camp-info"> 
+                        🗓️ Sample date: 25 November 2026 
+                    </p> 
+ 
+                    <p class="camp-info"> 
+                        📍 Example venue: Rural Community Centre 
+                    </p> 
+ 
+                    <p class="camp-description"> 
+                        Health awareness, basic screening and 
+                        guidance focused on women's health. 
+                    </p> 
+ 
+                    <!-- CHANGED: BUTTON CONNECTED --> 
+                    <a href="medical-camps.html" class="camp-btn"> 
+                        View Details → 
+                    </a> 
+ 
+                </div> 
+ 
+                <!-- CAMP CARD 3 --> 
+ 
+                <div class="camp-card"> 
+ 
+                    <div class="camp-top"> 
+ 
+                        <div class="camp-icon"> 
+                            👨‍👩‍👧 
+                        </div> 
+ 
+                        <span class="camp-status"> 
+                            SAMPLE 
+                        </span> 
+ 
+                    </div> 
+ 
+                    <h3> 
+                        Child Health & Nutrition Camp 
+                    </h3> 
+ 
+                    <p class="camp-info"> 
+                        🗓️ No confirmed date 
+                    </p> 
+ 
+                    <p class="camp-info"> 
+                        📍 Example venue: Local Community Area 
+                    </p> 
+ 
+                    <p class="camp-description"> 
+                        Child nutrition awareness, basic health 
+                        checks and healthy lifestyle guidance. 
+                    </p> 
+ 
+                    <!-- CHANGED: BUTTON CONNECTED --> 
+                    <a href="medical-camps.html" class="camp-btn"> 
+                        View Details → 
+                    </a> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+            <div class="camp-note"> 
+ 
+                <span> 
+                    💙 
+                </span> 
+ 
+                <p> 
+                    These are demonstration listings only; no camp 
+                    schedule or registration is confirmed. Replace them 
+                    with verified local organiser details before publication. 
+                </p> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+        <!-- ================= EMERGENCY SUPPORT ================= --> 
+ 
+        <section class="emergency-section" id="emergency"> 
+ 
+            <div class="emergency-content"> 
+ 
+                <p class="section-tag"> 
+                    EMERGENCY SUPPORT 
+                </p> 
+ 
+                <h2> 
+                    Help When 
+                    <span> 
+                        You Need It. 
+                    </span> 
+                </h2> 
+ 
+                <p> 
+                    In an emergency, stay calm and seek professional 
+                    medical assistance as quickly as possible. 
+                </p> 
+ 
+                <div class="emergency-actions"> 
+ 
+                    <a href="tel:108" class="emergency-btn"> 
+                        🚑 Call Ambulance 
+                    </a> 
+ 
+                    <a href="tel:112" class="help-btn"> 
+                        📞 Emergency Help 
+                    </a> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+            <div class="emergency-cards"> 
+ 
+                <div class="emergency-info-card"> 
+ 
+                    <div class="emergency-icon"> 
+                        🚑 
+                    </div> 
+ 
+                    <div> 
+ 
+                        <h3> 
+                            Ambulance 
+                        </h3> 
+ 
+                        <p> 
+                            Call 108 for emergency ambulance services. 
+                        </p> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+                <div class="emergency-info-card"> 
+ 
+                    <div class="emergency-icon"> 
+                        🏥 
+                    </div> 
+ 
+                    <div> 
+ 
+                        <h3> 
+                            Medical Assistance 
+                        </h3> 
+ 
+                        <p> 
+                            Contact a qualified healthcare professional. 
+                        </p> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+                <div class="emergency-info-card"> 
+ 
+                    <div class="emergency-icon"> 
+                        📍 
+                    </div> 
+ 
+                    <div> 
+ 
+                        <h3> 
+                            Nearest Healthcare Centre 
+                        </h3> 
+ 
+                        <p> 
+                            Find appropriate medical assistance nearby. 
+                        </p> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+        <!-- ================= ABOUT PROJECT ================= --> 
+ 
+        <section class="about-section" id="about"> 
+ 
+            <div class="about-content"> 
+ 
+                <p class="section-tag"> 
+                    ABOUT THE PROJECT 
+                </p> 
+ 
+                <h2> 
+                    Building Healthier 
+                    <span> 
+                        Communities Together. 
+                    </span> 
+                </h2> 
+ 
+                <p class="about-description"> 
+                    HealthCare+ is a CEP Project 2.0 initiative focused on 
+                    improving health and hygiene awareness through simple, 
+                    accessible and reliable digital information. 
+                </p> 
+ 
+                <p class="about-description"> 
+                    The project aims to support communities by providing 
+                    basic healthcare awareness, hygiene education, women 
+                    and child health information, medical camp awareness 
+                    and a simple health-awareness assistant demo. 
+                </p> 
+ 
+                <div class="about-features"> 
+ 
+                    <div class="about-feature"> 
+ 
+                        <span> 
+                            ✓ 
+                        </span> 
+ 
+                        <p> 
+                            Verified health awareness 
+                        </p> 
+ 
+                    </div> 
+ 
+                    <div class="about-feature"> 
+ 
+                        <span> 
+                            ✓ 
+                        </span> 
+ 
+                        <p> 
+                            Hygiene & prevention education 
+                        </p> 
+ 
+                    </div> 
+ 
+                    <div class="about-feature"> 
+ 
+                        <span> 
+                            ✓ 
+                        </span> 
+ 
+                        <p> 
+                            Women & child health awareness 
+                        </p> 
+ 
+                    </div> 
+ 
+                    <div class="about-feature"> 
+ 
+                        <span> 
+                            ✓ 
+                        </span> 
+ 
+                        <p> 
+                            Accessible digital support 
+                        </p> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+            <div class="about-visual"> 
+ 
+                <div class="about-main-card"> 
+ 
+                    <div class="about-card-icon"> 
+                        🏥 
+                    </div> 
+ 
+                    <h3> 
+                        HealthCare+ 
+                    </h3> 
+ 
+                    <p> 
+                        Awareness • Prevention • Healthy Living 
+                    </p> 
+ 
+                </div> 
+ 
+                <div class="about-small-card about-card-one"> 
+                    ❤️ Better Awareness 
+                </div> 
+ 
+                <div class="about-small-card about-card-two"> 
+                    🌱 Healthy Communities 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+    </main> 
+ 
+    <!-- ================= FOOTER ================= --> 
+ 
+    <footer class="footer"> 
+ 
+        <div class="footer-logo"> 
+            🏥 HealthCare+ 
+        </div> 
+ 
+        <p> 
+            Health & Hygiene Awareness | CEP Project 2.0 
+        </p> 
+ 
+        <p> 
+            © 2026 HealthCare+. All Rights Reserved. 
+        </p> 
+ 
+    </footer> 
+ 
+    <!-- ================= JAVASCRIPT ================= --> 
+ 
+    <script src="./js/i18n.js"></script>
+    <script src="./js/i18n.js"></script>
+    <script src="./js/project-interactions.js"></script>
+    <script src="./js/script.js"></script> 
+ 
+</body> 
+ 
+</html>
